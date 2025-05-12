@@ -1,0 +1,161 @@
+# Default values for mlflow.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+MLFlow:
+  artifacts:
+    bucketName:
+
+replicaCount: 1
+enabled: true
+image:
+  repository: "adregistry.fnal.gov/external/evk02/mlflow"
+  tag: "2.2.1"
+  pullPolicy: "Always"
+  # Overrides the image tag whose default is the chart appVersion.
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+services:
+  postgres:
+    enabled: true
+    externalURI:
+  minio:
+    enabled: true
+    externalURI:
+    type: LoadBalancer
+s3:
+  url:
+  # Secret with values for 'user' and 'key'
+  secret:
+  user:
+  key:
+
+postgresql:
+  enabled: true
+  image:
+    registry: "adregistry.fnal.gov"
+    repository: "external/bitnami/postgresql"
+    tag: "14.5.0-debian-11-r35"
+  auth:
+    postgresPassword: leftfoot1
+    username: mlflow
+    password: leftfoot1
+    database: mlflow
+
+minio:
+  enabled: true
+  image:
+    registry: "adregistry.fnal.gov"
+    repository: "external/bitnami/minio"
+    tag: "2022.12.12-debian-11-r9"
+  auth:
+    rootPassword: leftfoot1
+
+
+oauth2Proxy:
+  enabled: false
+  repository: "adregistry.fnal.gov/external/bitnami/oauth2-proxy"
+  tag: "7.4.0"
+  
+  ## Name of Kubernetes secret holding
+  ##   cookie_secret
+  ##   client_secret
+  secret:
+
+  ## This should match the client ID for your provider
+  clientID:
+  provider: "keycloak-oidc"
+
+  emailDomains: "*"
+
+  # List of groups
+  allowedGroups:
+  
+  cookieRefresh: "5m"
+  keycloak:
+    # restrict logins to users with this role (may be given multiple times). Only works with the keycloak-oidc provider.
+    allowed_roles:
+
+  oidc:
+    # the OpenID Connect issuer URL, e.g. "https://accounts.google.com"
+    oidc_issuer_url:
+
+    # OIDC JWKS URI for token verification; required if OIDC discovery is disabled
+    oidc_jwks_url:
+
+    # which OIDC claim contains the user's email?
+    oidc_email_claim:
+
+    # which OIDC claim contains the user groups?
+    oidc_groups_claim:
+
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: LoadBalancer
+  port: 5000
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

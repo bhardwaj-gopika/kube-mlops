@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-aimltoolset-pod
+  labels:
+    app: my-aimltoolset-pod
+spec:
+  containers:
+  - name: my-aimltoolset-pod
+    image: adregistry.fnal.gov/external/my-aimltoolset:0.2
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "while true; do sleep 30; done;" ]

@@ -1,0 +1,13 @@
+/etc/krb5.conf.d/10-ad-default_ccache
+# Kerberos settings unique to AD Controls
+# Install location: /etc/krb5.conf.d
+#
+# This file is numbered so it is considered after the system
+# default kcm_default_ccache config file.  The use of a FILE
+# based cache is necessary for JDK 8 applications, as they can't deal
+# with other Kerberos credential cache methods.  Once JDK 8 is history,
+# this configuration can be removed.
+
+# Use a FILE: credentials cache so that Java programs can find it
+[libdefaults]
+    default_ccache_name = FILE:/tmp/krb5cc_%{uid}

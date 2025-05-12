@@ -1,0 +1,12 @@
+docker.io/bitnami/nginx:1.27.0-debian-12-r1;adregistry.fnal.gov/external/bitnami/nginx:1.27.0-debian-12-r1
+getsentry/sentry:24.5.1;adregistry.fnal.gov/external/getsentry/sentry:24.5.1
+getsentry/snuba:24.5.1;adregistry.fnal.gov/external/getsentry/snuba:24.5.1
+yandex/clickhouse-server:21.8.13.6;adregistry.fnal.gov/external/yandex/clickhouse-server:21.8.13.6
+docker.io/bitnami/kafka:3.7.0-debian-12-r7;adregistry.fnal.gov/external/bitnami/kafka:3.7.0-debian-12-r7
+docker.io/bitnami/postgresql:15.3.0-debian-11-r0;adregistry.fnal.gov/external/bitnami/postgresql:15.3.0-debian-11-r0
+docker.io/bitnami/rabbitmq:3.11.18-debian-11-r0;adregistry.fnal.gov/external/bitnami/rabbitmq:3.11.18-debian-11-r0
+docker.io/bitnami/redis:7.0.11-debian-11-r12;adregistry.fnal.gov/external/bitnami/redis:7.0.11-debian-11-r12
+docker.io/bitnami/zookeeper:3.8.2-debian-11-r27;adregistry.fnal.gov/external/bitnami/zookeeper:3.8.2-debian-11-r27
+getsentry/relay:24.5.1;adregistry.fnal.gov/external/getsentry/relay:24.5.1
+subfuzion/netcat:latest;adregistry.fnal.gov/external/subfuzion/netcat:latest
+prom/statsd-exporter:v0.17.0;adregistry.fnal.gov/external/prom/statsd-exporterv0.17.0

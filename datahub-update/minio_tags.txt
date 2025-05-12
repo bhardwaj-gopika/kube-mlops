@@ -1,0 +1,1 @@
+bitnami/minio:2024.6.6;adregistry.fnal.gov/ai-trial/bitnami/minio:2024.6.6

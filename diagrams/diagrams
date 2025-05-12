@@ -1,0 +1,20 @@
+Diagrams 
+
+1.	Data collected from ACNET console using acsys-py and saved in csv.
+2.	The csv data is upload to the corresponding project bucket in MinIO.
+3.	Project data ingested via S3 pull-based ingestion on Datahub UI 
+4.	Metadata Ingestions 
+•	DataHub Actions provides cli, sdk and integration framework for pulling/pushing data.
+•	DataHub GMS is the sink for the metadata or the Metadata Service.
+•	Kafka is used for streaming data.
+•	MySQL is the local DB.
+•	Zookeeper provides coordination service.
+•	Elastic Search provides search index.
+
+5.	Project data (Training, Test and Validation datasets) fetched by machine learning model executed in Python Dev environment in my-aimltoolset-pod.
+
+6.	MLFlow Tracking Server is the single-entry point from the Python Dev environment in my-aimltoolset-pod for accessing MLFlow functionality. It contains all the MLFlow components - Tracking, Model, Projects, and Repositories.
+
+7.	Tracking server uses PostgreSQL to store entities. Entities are runs, parameters, metrics, tags, notes, and metadata. 
+
+8.	The Tracking server accesses MinIO to store artifacts. Examples of artifacts are models, and configuration files.

@@ -1,0 +1,10 @@
+acryldata/datahub-frontend-react:v0.13.2;adregistry.fnal.gov/ai-trial/acryldata/datahub-frontend-react:v0.13.2
+acryldata/datahub-gms:v0.13.2;adregistry.fnal.gov/ai-trial/acryldata/datahub-gms:v0.13.2
+acryldata/datahub-upgrade:v0.13.2;adregistry.fnal.gov/ai-trial/acryldata/datahub-upgrade:v0.13.2
+acryldata/datahub-elasticsearch-setup:v0.13.2;adregistry.fnal.gov/ai-trial/acryldata/datahub-elasticsearch-setup:v0.13.2
+acryldata/datahub-kafka-setup:v0.13.2;adregistry.fnal.gov/ai-trial/acryldata/datahub-kafka-setup:v0.13.2
+acryldata/datahub-mysql-setup:v0.13.2;adregistry.fnal.gov/ai-trial/acryldata/datahub-mysql-setup:v0.13.2
+acryldata/datahub-mae-consumer:v0.13.2;adregistry.fnal.gov/ai-trial/acryldata/datahub-mae-consumer:v0.13.2
+acryldata/datahub-mce-consumer:v0.13.2;adregistry.fnal.gov/ai-trial/acryldata/datahub-mce-consumer:v0.13.2
+acryldata/datahub-ingestion:v0.13.2;adregistry.fnal.gov/ai-trial/acryldata/datahub-ingestion:v0.13.2
+acryldata/datahub-postgres-setup:v0.13.2;adregistry.fnal.gov/ai-trial/acryldata/datahub-postgres-setup:v0.13.2

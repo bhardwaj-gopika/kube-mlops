@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bayes-opt-toolkit
+  labels:
+    app: bayes-opt-toolkit
+spec:
+  containers:
+  - name: bayes-opt-toolkit
+    image: adregistry.fnal.gov/ai-trial/bayes-opt-toolkit:0.1
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "while true; do sleep 30; done;" ]

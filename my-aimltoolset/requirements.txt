@@ -1,0 +1,15 @@
+mlflow>=1.0
+numpy
+pandas
+click
+scipy
+scikit-learn
+matplotlib
+hyperopt
+protobuf<4.0.0
+h2o
+minio
+pre-commit
+pytest
+pytest-cov
+boto3

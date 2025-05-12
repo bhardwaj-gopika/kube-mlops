@@ -1,0 +1,1 @@
+my-mlflow:0.2;adregistry.fnal.gov/ai-trial/my-mlflow:0.2

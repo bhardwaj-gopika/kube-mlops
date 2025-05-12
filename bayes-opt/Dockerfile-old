@@ -1,0 +1,18 @@
+FROM --platform=linux/amd64 python:3.11-slim
+
+# Install Kerberos and dependencies
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get -qq update && \
+    apt-get -yqq install krb5-user libpam-krb5 krb5-config && \
+    apt-get install libkrb5-dev -y && \
+    apt-get install libkrb5-dev libssl-dev libsasl2-dev libsasl2-modules-gssapi-mit \
+    apt-get -yqq clean
+
+COPY krb5.conf /etc/krb5.conf
+
+RUN pip install --upgrade pip
+
+RUN pip3 install acsys[settings] --extra-index-url https://www-bd.fnal.gov/pip3 && \
+    pip install badger-opt  && \
+    pip install xopt
